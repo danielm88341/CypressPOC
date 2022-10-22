@@ -1,0 +1,44 @@
+{
+  "NOTES": [{ "1": "These are examples." }],
+  "users": [
+    {
+      "first": "Bot1",
+      "last": "Tester",
+      "username": "testbot1",
+      "clearPass": "password",
+      "accounts": [
+        {
+          "name": "AutoBank",
+          "routing": "123456789",
+          "account": "111111111"
+        }
+      ]
+    },
+    {
+      "first": "Bot2",
+      "last": "Tester",
+      "username": "testbot2",
+      "clearPass": "password",
+      "accounts": [
+        {
+          "name": "AutoBank",
+          "routing": "123456789",
+          "account": "222222222"
+        }
+      ]
+    },
+    {
+      "first": "Bot3",
+      "last": "Tester",
+      "username": "testbot3",
+      "clearPass": "password",
+      "accounts": [
+        {
+          "name": "AutoBank",
+          "routing": "123456789",
+          "account": "333333333"
+        }
+      ]
+    }
+  ]
+}

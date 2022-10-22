@@ -1,0 +1,42 @@
+{
+  "name": "cypress-testingpoc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write ."
+  },
+  "author": "Daniel Mills",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^10.3.0",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "@types/jest": "27.4.1",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-cypress": "2.12.1",
+    "prettier": "^2.7.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "cypress/globals": true
+    },
+    "extends": [
+      "react-app",
+      "plugin:prettier/recommended",
+      "plugin:cypress/recommended"
+    ],
+    "plugins": [
+      "cypress",
+      "prettier"
+    ],
+    "rules": {
+      "no-unused-expressions": 0
+    }
+  }
+}

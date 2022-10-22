@@ -1,0 +1,75 @@
+Note: there are no special rendering differences between mobile and browser
+Mobile testing would be the same layout
+Note: Spinning up dev refreshes the database
+
+Page/Regression testing notes::::
+
+Login Page
+    Methods
+        Login
+    Candidates
+        Login with good credentials
+            Validate sign-in button is disabled at start
+        Login with bad credentials
+        --Forgot password
+            Not an option on the home page
+        Create account
+    Not Candidates
+        Login with incomplete credentials
+            Should be covered as unit tests
+            This includes triggering the error alerts
+
+Main Dashboard
+    Methods
+        Expand/Hide sidebar
+        Navigate to (Home, My Account, Bank Account, Notifications)
+        Logout
+        Filter transactions
+    Candidates
+        Change filter
+        Bug ticket for dedicated test: date picker bugs
+            Chosing a new date when one is picked doesn't update the date filter
+                Currently updating requires removing the existing one
+            Locality concerns: timezones aren't factored in to the picker query
+                transactions that cross the day-line when normalizing timezones get missed
+    Not Candidates
+
+E2E
+    Create a new account
+        Includes adding the first bank account upon initial login
+    :: Note: Due to cycle times it is faster to do the payment verifications as an API test
+    ::      These are more to make sure the UI components are behaving as expected
+    Create a new (unrequested) Pay transaction
+    Create a new Request transaction
+    Process transaction request
+        Accept / Reject -> Include validating balance updates
+    Add/Remove a new bank account 
+        Note: missing feature in UI to view details after added
+    React/Comment on public Transation
+        :: DJM: Why is this a thing? Yes, this is like reacting to a tweet, but it makes no sense
+    
+    
+API Work :::::::::::
+
+Processes / Methods needed
+    Login/Authenticate
+Data Validations
+    Personal Account
+        Get, Change, Reset, validate data at all steps
+    Bank Account
+        Get accounts on list
+        Add / Remove / Edit accounts
+    Contacts
+        Get Contacts
+        Add / Remove Contact
+    
+Transations
+    Make request
+    Make an unrequested payment
+    Process requested payment
+        Accept and Reject payment request
+    :: Note: always validate changes occured, account balance can never go negative
+    :: -- Do this as an API test due to cycle time concerns
+    Query Transactions
+        Everyone, Friends, Self
+    
